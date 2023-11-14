@@ -184,6 +184,35 @@ files:
       }, 30000)
     
     learner_created: false
-feedback_link: https://hyperskill.org/projects/115/stages/626/implement#comment
-status: Unchecked
+  - name: src/styles.css
+    visible: true
+    learner_created: true
+  - name: src/world.png
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/10246#comment
+status: Failed
+feedback:
+  message: |-
+    Unexpected error in test #3
+
+    We have recorded this bug and will fix it soon.
+
+    System win32 10.0.22621 x64
+    Testing library version 4.1.1
+    Node.js version 20.9.0
+    Puppeteer version 21.0.0
+    Mocha version 9.2.2
+
+    ReferenceError: div is not defined
+        at evaluate (evaluate at TestRun.testCase (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\dist\hstest\environment\page.js:39:52), <anonymous>:22:55)
+        at #evaluate (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\node_modules\puppeteer-core\lib\cjs\puppeteer\common\ExecutionContext.js:252:55)
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async ExecutionContext.evaluate (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\node_modules\puppeteer-core\lib\cjs\puppeteer\common\ExecutionContext.js:149:16)
+        at async TestRun.testCase (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\dist\hstest\environment\page.js:39:28)
+        at async TestRun.test (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\dist\hstest\testing\testRun.js:29:20)
+        at async FlashcardsTest._runTests (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\dist\hstest\stage\stageTest.js:57:32)
+        at async FlashcardsTest.runTests (I:\SynologyDrive\code\Flashcards (Frontend)\node_modules\hs-test-web\dist\hstest\stage\stageTest.js:28:9)
+        at async Context.<anonymous> (I:\SynologyDrive\code\Flashcards (Frontend)\Flashcards (Frontend)\task\test\test.js:164:5)
+  time: "Tue, 14 Nov 2023 23:50:31 UTC"
 record: -1

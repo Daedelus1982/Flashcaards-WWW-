@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  background-image: url("world.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 40px;
+  width: 85vw;
+  height: 85vh;
+}
+
+h1 {
+  background-color: dodgerblue;
+  border-radius: 30px;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 40px auto;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.card-holder {
+  background-color: rgba(250, 235, 215, .8);
+  border-radius: 20px;
+  display: grid;
+  gap: 15px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px auto auto auto;
+  padding: 20px;
+  place-items: start center;
+  width: 30%;
+}
+
+.card {
+  align-items: flex-start;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+}
+
+ .card > p {
+   background-color: #FF7F50;
+   border-radius: 10px;
+   color: #FFF;
+   font-family: 'Poppins', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   margin: 10px auto;
+   padding: 5px;
+   text-align: center;
+   width: 75%;
+ }

@@ -6,13 +6,118 @@ files:
       <!DOCTYPE html>
       <html lang="en">
       <head>
-          <meta charset="UTF-8">
-          <title>Title</title>
+        <meta charset="UTF-8">
+        <title>Flashcards</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
       </head>
       <body>
-      
+      <div id="main">
+        <h1>What is the capital of...</h1>
+        <div class="card-holder">
+          <div class="card">
+            <p>Portugal</p>
+          </div>
+          <div class="card">
+            <p>Peru</p>
+          </div>
+          <div class="card">
+            <p>Canada</p>
+          </div>
+          <div class="card">
+            <p>Kenya</p>
+          </div>
+          <div class="card">
+            <p>Morocco</p>
+          </div>
+          <div class="card">
+            <p>Sweden</p>
+          </div>
+          <div class="card">
+            <p>Iran</p>
+          </div>
+          <div class="card">
+            <p>Croatia</p>
+          </div>
+          <div class="card">
+            <p>Czech Republic</p>
+          </div>
+        </div>
+      </div>
       </body>
       </html>
+    learner_created: false
+  - name: src/styles.css
+    visible: true
+    text: |-
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      
+      #main {
+        display: flex;
+        flex-direction: column;
+        background-image: url("world.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 40px;
+        width: 85vw;
+        height: 85vh;
+      }
+      
+      h1 {
+        background-color: dodgerblue;
+        border-radius: 30px;
+        color: #FFF;
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 40px auto;
+        padding: 10px;
+        text-align: center;
+        width: 50%;
+      }
+      
+      .card-holder {
+        background-color: rgba(250, 235, 215, .8);
+        border-radius: 20px;
+        display: grid;
+        gap: 15px;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 10px auto auto auto;
+        padding: 20px;
+        place-items: start center;
+        width: 30%;
+      }
+      
+      .card {
+        align-items: flex-start;
+        background-color: dodgerblue;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        height: 100px;
+        padding: 2px;
+      }
+      
+       .card > p {
+         background-color: #FF7F50;
+         border-radius: 10px;
+         color: #FFF;
+         font-family: 'Poppins', sans-serif;
+         font-size: 16px;
+         font-weight: 400;
+         margin: 10px auto;
+         padding: 5px;
+         text-align: center;
+         width: 75%;
+       }
     learner_created: false
   - name: test/test.js
     visible: false
@@ -190,6 +295,19 @@ files:
       }, 30000)
     
     learner_created: false
-feedback_link: https://hyperskill.org/learn/step/10247#comment
-status: Unchecked
+  - name: src/world.png
+    visible: true
+    learner_created: true
+  - name: src/passes-tests.html
+    visible: true
+    learner_created: true
+  - name: src/passes-teststemp.html
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/projects/115/stages/627/implement#comment
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Mon, 20 Nov 2023 18:46:16 UTC"
 record: -1

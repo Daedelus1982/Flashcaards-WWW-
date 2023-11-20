@@ -46,7 +46,7 @@ class FlashcardsTest extends StageTest {
                 }
             }
 
-            return blocksCounter === 3 ? correct() : wrong("There should be an element with 9 div elements inside.");
+            return blocksCounter === 3 ? correct() : wrong("There should be an element with 9 div elements inside or 3 container divs each containing 3 div elements inside it.");
         }),
         this.page.execute(() => {
             let divs = document.body.getElementsByTagName("div");
@@ -69,20 +69,25 @@ class FlashcardsTest extends StageTest {
 
             let k = 0;
             for (let card of cards) {
-                if (card.children[0] && card.children[0].tagName.toLowerCase() === 'p') {
-                    let font = window.getComputedStyle(div.children[0]).fontFamily;
-                    if (font === '"serif"' || font === '"Times New Roman"') {
-                        return wrong("Text on cards should have font different from 'serif' and 'Times New Roman'");
-                    } else {
-                        k++;
+                if (card.children[0] && card.children[0].tagName.toLowerCase() === 'div' && card.children[0].children.length === 2) {
+                    for (let sideDir of card.children[0].children) {
+                        if (sideDir.children[0] && sideDir.children[0].tagName && sideDir.children[0].tagName.toLowerCase() === 'p') {
+                            let font = window.getComputedStyle(sideDir.children[0]).fontFamily;
+                            if (font === '"serif"' || font === '"Times New Roman"') {
+                                return wrong("Text on cards should have font different from 'serif' and 'Times New Roman'");
+                            } else {
+                                k++;
+                            }
+                        } else {
+                            return wrong("All text on the cards should be in 'p' element");
+                        }
                     }
                 } else {
-                    return wrong("The structure should be the same as given in the step and all text on the cards should be in 'p' element");
+                    return wrong("Each card should have suggested structure: 1 container div containing main card div, which in turn contains 2 more divs inside it for both sides.");
                 }
             }
 
-
-            return k !== 9 ? wrong("9 div elements should contain p element.") : correct();
+            return k !== 18 ? wrong("There should be 2 p elements for each of the cards") : correct();
         }),
         this.page.execute(() => {
             let divs = document.body.getElementsByTagName("div");
@@ -145,6 +150,7 @@ class FlashcardsTest extends StageTest {
             let bodyStyles = window.getComputedStyle(document.body);
             if (bodyStyles.backgroundColor !== 'rgba(0, 0, 0, 0)' ||
                 bodyStyles.backgroundImage !== 'none') {
+
                 return correct();
             }
 
